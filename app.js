@@ -2,27 +2,13 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 const PORT = 5000
-const {MONGOURI} = require('./keys')
+const {MONGOURI} = require('./config/keys')
 // 89mgB89korkx2RiM
 
 require('./models/user')
 
-// const customMiddleware = (req,res,next)=>{
-//     console.log("middleware executed!!")
-//     next()
-// }
-
-// // app.use(customMiddleware)
-
-// app.get('/',(req,res)=>{
-//     console.log("Home")
-//     res.send("Hello World")
-// })
-
-// app.get('/about',customMiddleware,(req,res)=>{
-//     console.log("about")
-//     res.send("about page")
-// })
+app.use(express.json())
+app.use(require('./routes/auth'))
 
 mongoose.connect(MONGOURI,{
     useNewUrlParser: true,
@@ -40,3 +26,20 @@ mongoose.connection.on('error', (err)=>{
 app.listen(PORT,()=>{
     console.log("Server is running on",PORT)
 })
+
+// const customMiddleware = (req,res,next)=>{
+//     console.log("middleware executed!!")
+//     next()
+// }
+
+// // app.use(customMiddleware)
+
+// app.get('/',(req,res)=>{
+//     console.log("Home")
+//     res.send("Hello World")
+// })
+
+// app.get('/about',customMiddleware,(req,res)=>{
+//     console.log("about")
+//     res.send("about page")
+// })
