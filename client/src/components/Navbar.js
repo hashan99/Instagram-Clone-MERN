@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 
 const NavBar = ()=>{
     return(
+      <div class="navbar-fixed">
         <nav>
         <div className="nav-wrapper white" style={{color:"Black"}}>
           <Link to="/" className="brand-logo left">Instagram</Link>
@@ -13,7 +14,8 @@ const NavBar = ()=>{
             <li><Link to="/create">Create Post</Link></li>
           </ul>
         </div>
-      </nav>
+        </nav>
+      </div>
     )
 }
 
