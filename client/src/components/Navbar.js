@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 
 const NavBar = ()=>{
     return(
-      <div class="navbar-fixed">
+      <div className="navbar-fixed">
         <nav>
         <div className="nav-wrapper white" style={{color:"Black"}}>
           <Link to="/" className="brand-logo left">Instagram</Link>
