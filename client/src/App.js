@@ -19,7 +19,7 @@ const Routing = ()=>{
     // console.log(typeof(user),user)
     if(user){
       dispatch({type:"USER",payload:user})
-      history.push('/')
+      // history.push('/')
     }else{
       history.push('/signin')
     }

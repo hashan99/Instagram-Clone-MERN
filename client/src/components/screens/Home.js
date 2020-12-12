@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React,{useState,useEffect} from 'react'
 
 const Home = () => {
     const [data, setData] = useState([])
@@ -8,11 +8,11 @@ const Home = () => {
                 "Authorization": "Bearer " + localStorage.getItem("jwt")
             }
         }).then(res => res.json())
-            .then(result => {
-                // console.log(result)
-                setData(result.posts)
-            })
-    }, [])
+        .then(result=>{
+            // console.log(result)
+            setData(result.posts)
+        })
+    },[])
 
     return (
         <div className="home">
