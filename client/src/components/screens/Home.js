@@ -111,6 +111,23 @@ const Home = () => {
         })
     }
 
+    //homework
+    // const deleteComment = (postid)=>{
+    //     fetch(`/deletecomment/${postid}`,{
+    //         method:"delete",
+    //         headers:{
+    //             "Authorization":"Bearer "+localStorage.getItem("jwt")
+    //         }
+    //     }).then(res=>res.json())
+    //     .then(result=>{
+    //         console.log(result)
+    //         const newData = data.filter(item=>{
+    //             return item._id !== result._id
+    //         })
+    //         setData(newData)
+    //     })
+    // }
+
     return (
         <div className="home">
             {
@@ -144,7 +161,11 @@ const Home = () => {
                                 {
                                     item.comments.map(record=>{
                                         return (
-                                            <h6 key={record._id}><span style={{fontWeight:"500"}}>{record.postedBy.name}</span> {record.text}</h6>
+                                            <h6 key={record._id}><span style={{fontWeight:"500"}}>{record.postedBy.name}</span> {record.text} 
+                                                <i className="material-icons" style={{float:"right"}}
+                                                    // onClick={ () => { deletePost(item._id)}}
+                                                >more_vert</i>
+                                            </h6>
                                         )
                                     })
                                 }
