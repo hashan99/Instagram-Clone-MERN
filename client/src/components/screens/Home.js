@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { UserContext } from '../../App'
+import {Link} from 'react-router-dom'
 
 const Home = () => {
     const [data, setData] = useState([])
@@ -79,36 +80,36 @@ const Home = () => {
                 postId, //postId:postId
                 text
             })
-        }).then(res=>res.json())
-        .then(result=>{
-            console.log(result)
-            const newData = data.map(item => {
-                if (item._id == result._id) {
-                    return result
-                } else {
-                    return item
-                }
+        }).then(res => res.json())
+            .then(result => {
+                console.log(result)
+                const newData = data.map(item => {
+                    if (item._id == result._id) {
+                        return result
+                    } else {
+                        return item
+                    }
+                })
+                setData(newData)
+            }).catch(err => {
+                console.log(err)
             })
-            setData(newData)
-        }).catch(err=>{
-            console.log(err)
-        })
     }
 
-    const deletePost = (postid)=>{
-        fetch(`/deletepost/${postid}`,{
-            method:"delete",
-            headers:{
-                "Authorization":"Bearer "+localStorage.getItem("jwt")
+    const deletePost = (postid) => {
+        fetch(`/deletepost/${postid}`, {
+            method: "delete",
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("jwt")
             }
-        }).then(res=>res.json())
-        .then(result=>{
-            console.log(result)
-            const newData = data.filter(item=>{
-                return item._id !== result._id
+        }).then(res => res.json())
+            .then(result => {
+                console.log(result)
+                const newData = data.filter(item => {
+                    return item._id !== result._id
+                })
+                setData(newData)
             })
-            setData(newData)
-        })
     }
 
     //homework
@@ -135,10 +136,10 @@ const Home = () => {
                     return (
                         <div className="card home-card" key={item._id}>
                             <h6>
-                                {item.postedBy.name} 
-                                {item.postedBy._id == state._id && <i className="material-icons" style={{float:"right"}}
-                                        onClick={ () => { deletePost(item._id)}}
-                                    >delete</i>}  
+                                <Link to={item.postedBy._id !== state._id ? "/profile/"+item.postedBy._id : "/profile"} >{item.postedBy.name}</Link>
+                                {item.postedBy._id == state._id && <i className="material-icons" style={{ float: "right" }}
+                                    onClick={() => { deletePost(item._id) }}
+                                >delete</i>}
                             </h6>
                             <div className="card-image">
                                 <img src={item.photo} />
@@ -159,9 +160,9 @@ const Home = () => {
                                 <h6>{item.title}</h6>
                                 <p>{item.body}</p>
                                 {
-                                    item.comments.map(record=>{
+                                    item.comments.map(record => {
                                         return (
-                                            <h6 key={record._id}><span style={{fontWeight:"500"}}>{record.postedBy.name}</span> {record.text} 
+                                            <h6 key={record._id}><span style={{ fontWeight: "500" }}>{record.postedBy.name}</span> {record.text}
                                                 <i className="material-icons" style={{float:"right"}}
                                                     // onClick={ () => { deletePost(item._id)}}
                                                 >more_vert</i>
@@ -169,9 +170,9 @@ const Home = () => {
                                         )
                                     })
                                 }
-                                <form onSubmit={(e)=>{
+                                <form onSubmit={(e) => {
                                     e.preventDefault()
-                                    makeComment(e.target[0].value,item._id)
+                                    makeComment(e.target[0].value, item._id)
                                 }}>
                                     <input type="text" placeholder="add a comment" />
                                 </form>
