@@ -8,7 +8,7 @@ const Home = () => {
     useEffect(() => {
         fetch("/allpost", {
             headers: {
-                "Authorization": "Bearer " + localStorage.getItem("jwt")
+                "Authorization": "Bearer "+localStorage.getItem("jwt")
             }
         }).then(res => res.json())
             .then(result => {
@@ -22,7 +22,7 @@ const Home = () => {
             method: "put",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer " + localStorage.getItem("jwt")
+                "Authorization": "Bearer "+localStorage.getItem("jwt")
             },
             body: JSON.stringify({
                 postId: id
@@ -48,7 +48,7 @@ const Home = () => {
             method: "put",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer " + localStorage.getItem("jwt")
+                "Authorization": "Bearer "+localStorage.getItem("jwt")
             },
             body: JSON.stringify({
                 postId: id
@@ -74,7 +74,7 @@ const Home = () => {
             method: "put",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer " + localStorage.getItem("jwt")
+                "Authorization": "Bearer "+localStorage.getItem("jwt")
             },
             body: JSON.stringify({
                 postId, //postId:postId
@@ -100,7 +100,7 @@ const Home = () => {
         fetch(`/deletepost/${postid}`, {
             method: "delete",
             headers: {
-                "Authorization": "Bearer " + localStorage.getItem("jwt")
+                "Authorization": "Bearer "+localStorage.getItem("jwt")
             }
         }).then(res => res.json())
             .then(result => {
