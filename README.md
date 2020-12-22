@@ -1,7 +1,7 @@
 # SpreadIn-WebApp-MERN
 SpreadIn is a Web-App developed by using MERN Stack and influenced from Instagram.
-<br>
-<a href="https://spreadin.herokuapp.com/">SpreadIn</a>
+<br><br>
+<a href="https://spreadin.herokuapp.com/">https://spreadin.herokuapp.com/</a>
 <br><br>
 You can create a SpreadIn profile using above link.
 <br><br>
