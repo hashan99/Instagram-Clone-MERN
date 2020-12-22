@@ -140,7 +140,7 @@ const Home = () => {
                                     src={state ? state.pic : "loading"}
                                     src={item.postedBy.pic}
                                 /> */}
-                                <h6 style={{ padding: "6px" }}>
+                                <h6 style={{ padding: "6px", fontWeight: "600" }}>
                                     <Link to={item.postedBy._id !== state._id ? "/profile/" + item.postedBy._id : "/profile"} >{item.postedBy.name}</Link>
                                     {item.postedBy._id == state._id && <i className="material-icons" style={{ float: "right" }}
                                         onClick={() => { deletePost(item._id) }}
@@ -163,12 +163,12 @@ const Home = () => {
                                     >thumb_up</i>
                                 }
                                 <h6>{item.likes.length} likes</h6>
-                                <h6>{item.title}</h6>
+                                <h6 style={{ fontWeight: "600" }}>{item.title}</h6>
                                 <p>{item.body}</p>
                                 {
                                     item.comments.map(record => {
                                         return (
-                                            <h6 key={record._id}><span style={{ fontWeight: "500" }}>
+                                            <h6 key={record._id}><span style={{ fontWeight: "600" }}>
                                                 <Link to={record.postedBy._id !== state._id ? "/profile/" + record.postedBy._id : "/profile"} >{record.postedBy.name}</Link>
                                                 {/* {record.postedBy.name} */}
                                                 </span> {record.text}

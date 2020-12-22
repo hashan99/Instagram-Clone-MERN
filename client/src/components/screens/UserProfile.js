@@ -88,26 +88,28 @@ const Profile = () => {
                         borderBottom: "1px solid grey"
                     }}>
                         <div>
-                            <img style={{ width: "160px", height: "160px", borderRadius: "80px" }}
+                        &nbsp;&nbsp;<img class="user-profile" style={{ width: "140px", height: "140px", borderRadius: "80px"}}
                                 src={userProfile.user.pic}
                             />
                         </div>
                         <div>
-                            <h4>{userProfile.user.name}</h4>
+                            <h6 align="center" class="user-profile" style={{ fontWeight: "600" }}>{userProfile.user.name}</h6>
                             <h6>{userProfile.user.email}</h6>
-                            <div style={{ display: "flex", justifyContent: "space-between", width: "108%" }}>
-                                <h6>{userProfile.posts.length} Posts</h6>
-                                <h6>{userProfile.user.followers.length} Followers</h6>
-                                <h6>{userProfile.user.following.length} Following</h6>
+                            <div style={{ display: "flex", justifyContent: "space-between", width: "108%", marginTop:"40px" }}>
+                                <div><p align="center">{userProfile.posts.length}<br></br>Posts &nbsp;</p></div>
+                                <div><p align="center">{userProfile.user.followers.length}<br></br>Followers &nbsp;</p></div>
+                                <div><p align="center">{userProfile.user.following.length}<br></br>Following &nbsp;&nbsp;</p></div>
                             </div>
                             {showfollow 
                                 ?
                                 <button style={{margin:"10px"}} className="btn waves-effect waves-light #64b5f6 blue darken-1"
-                                    onClick={() => followUser()}>Follow
+                                    onClick={() => followUser()}>
+                                    Follow
                                 </button>
                                 :
                                 <button style={{margin:"10px"}} className="btn waves-effect waves-light #64b5f6 blue darken-1"
-                                    onClick={() => unfollowUser()}>UnFollow
+                                    onClick={() => unfollowUser()}>
+                                    UnFollow
                                 </button>
                             }
                         </div>

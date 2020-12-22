@@ -73,17 +73,19 @@ const Profile = () => {
                     justifyContent: "space-around",
                 }}>
                     <div>
-                        <img style={{ width: "160px", height: "160px", borderRadius: "80px" }}
+                    &nbsp;&nbsp;<img style={{ width: "140px", height: "140px", borderRadius: "80px" }}
                             src={state ? state.pic : "loading"}
                         />
                     </div>
                     <div>
-                        <h4>{state ? state.name : "loading"}</h4>
+                        <h6 align="center" style={{ fontWeight: "600" }}>{state ? state.name : "loading"}</h6>
                         <h6>{state ? state.email : "loading"}</h6>
-                        <div style={{ display: "flex", justifyContent: "space-between", width: "108%" }}>
-                            <h6>{mypics.length} Posts</h6>
-                            <h6>{state ? state.followers.length : "0"} Followers</h6>
-                            <h6>{state ? state.following.length : "0"} Following</h6>
+                        <div style={{ display: "flex", justifyContent: "space-between", width: "108%", marginTop:"40px" }}>
+                            <div><p align="center">{mypics.length}<br></br>Posts &nbsp;</p></div>
+                            <div><p align="center">{state ? state.followers.length : "0"}<br></br>Followers &nbsp;</p></div>
+                            <div><p align="center">{state ? state.following.length : "0"}<br></br>Following &nbsp;&nbsp;</p></div>
+                            {/* <h6>{state ? state.followers.length : "0"} Followers</h6>
+                            <h6>{state ? state.following.length : "0"} Following</h6> */}
                         </div>
                     </div>
                 </div>
@@ -112,12 +114,6 @@ const Profile = () => {
                         )
                     })
                 }
-                {/* <img className="item" src="https://images.unsplash.com/photo-1552607676-17f088307dce?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NTB8fHBlcnNvbnxlbnwwfDJ8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
-                <img className="item" src="https://images.unsplash.com/photo-1552607676-17f088307dce?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NTB8fHBlcnNvbnxlbnwwfDJ8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
-                <img className="item" src="https://images.unsplash.com/photo-1552607676-17f088307dce?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NTB8fHBlcnNvbnxlbnwwfDJ8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
-                <img className="item" src="https://images.unsplash.com/photo-1552607676-17f088307dce?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NTB8fHBlcnNvbnxlbnwwfDJ8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
-                <img className="item" src="https://images.unsplash.com/photo-1552607676-17f088307dce?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NTB8fHBlcnNvbnxlbnwwfDJ8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
-                <img className="item" src="https://images.unsplash.com/photo-1552607676-17f088307dce?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NTB8fHBlcnNvbnxlbnwwfDJ8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" /> */}
             </div>
         </div>
     )
