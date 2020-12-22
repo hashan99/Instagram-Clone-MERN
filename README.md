@@ -6,7 +6,7 @@ SpreadIn is a Web-App developed by using MERN Stack and influenced from Instagra
 You can create a SpreadIn profile using above link.
 <br><br>
 <b>**Features**</b>
-<br>
+<br><br>
 -> SignUp User <br>
 -> SignIn user <br>
 -> Update Profile <br>
