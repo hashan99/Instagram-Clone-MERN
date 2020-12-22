@@ -8,19 +8,49 @@ const NavBar = ()=>{
     const renderList = ()=>{
       if(state){
         return [
-          <li><Link to="/profile">Profile</Link></li>,
-          <li><Link to="/create">Create Post</Link></li>,
-          <li><Link to="/myfollowingpost">My Following Posts</Link></li>,
+          <li><Link to="/profile">
+            <img class="nav-icon"
+                src="https://res.cloudinary.com/db957qd0z/image/upload/v1608644600/logos/Profile_vd3snf.ico" 
+                weight="40px" height="40px"
+            ></img>
+            {/* Profile */}
+          </Link></li>,
+
+          <li><Link to="/create">
+            <img class="nav-icon"
+                src="https://res.cloudinary.com/db957qd0z/image/upload/v1608645252/logos/Create_xm963o.png" 
+                weight="40px" height="40px"
+            ></img>
+            {/* Create Post */}
+          </Link></li>,
+
+          <li><Link to="/myfollowingpost">
+            <img class="nav-icon"
+                src="https://res.cloudinary.com/db957qd0z/image/upload/v1608645772/logos/MyFollowing_iqz6sz.ico" 
+                weight="40px" height="40px"
+            ></img>
+            {/* My Following Posts */}
+          </Link></li>,
           <li>
-            <button className="btn #c62828 red darken-3" 
-              onClick={()=>{
+            {/* <button className="btn #c62828 red darken-3" 
+                onClick={()=>{
                 localStorage.clear()
                 dispatch({type:"CLEAR"})
                 history.push('/signin')
               }
-              }>
-              Logout
-            </button>
+            }> */}
+              <img class="nav-icon"
+                src="https://res.cloudinary.com/db957qd0z/image/upload/v1608643733/logos/Logout_wjo3i7.ico" 
+                weight="40px" height="40px"
+                onClick={()=>{
+                localStorage.clear()
+                dispatch({type:"CLEAR"})
+                history.push('/signin')
+              }
+            }
+              ></img>
+              {/* Logout */}
+            {/* </button> */}
           </li>
         ]
       }
@@ -36,7 +66,13 @@ const NavBar = ()=>{
       <div className="navbar-fixed">
         <nav>
         <div className="nav-wrapper white" style={{color:"Black"}}>
-          <Link to={state?"/":"/signin"} className="brand-logo left">SpreadIn</Link>
+          <Link to={state?"/":"/signin"} className="brand-logo left"> 
+          <img src="https://res.cloudinary.com/db957qd0z/image/upload/v1608642945/logos/SpreadIn_mngm54.ico" 
+              weight="40px" height="40px"
+              style={{margin:"2px"}}
+          ></img>
+          SpreadIn  
+          </Link>
           <ul id="nav-mobile" className="right">
             {renderList()}
           </ul>
