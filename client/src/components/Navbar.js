@@ -39,7 +39,7 @@ const NavBar = ()=>{
                 history.push('/signin')
               }
             }> */}
-              <img class="nav-icon"
+              <img class="nav-logout-icon"
                 src="https://res.cloudinary.com/db957qd0z/image/upload/v1608643733/logos/Logout_wjo3i7.ico" 
                 weight="30px" height="30px"
                 onClick={()=>{
