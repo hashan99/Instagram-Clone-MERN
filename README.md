@@ -1,4 +1,4 @@
-# SpreadIn_MERN_App
-SpreadIn is a Web-App developed by using MERN Stack influenced from Instagram.
+# SpreadIn-WebApp-MERN
+SpreadIn is a Web-App developed by using MERN Stack and influenced from Instagram.
 
 <!-- Comments-->
