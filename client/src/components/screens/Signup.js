@@ -76,6 +76,9 @@ const Signup = () => {
         <div className="mycard">
             <div className="card auth-card input-field">
                 <h2>SpreadIn</h2>
+                <img class="brand-icon" src="https://res.cloudinary.com/db957qd0z/image/upload/v1608642945/logos/SpreadIn_mngm54.ico" 
+                    weight="60px" height="60px"
+                ></img>
                 <input
                     type="text"
                     placeholder="name"
