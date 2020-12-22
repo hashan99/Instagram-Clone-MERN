@@ -1,5 +1,5 @@
-# SpreadIn-WebApp-MERN
-SpreadIn is a Web-App developed by using MERN Stack and influenced from Instagram.
+# Spreadin-WebApp-MERN
+Spreadin is a Web-App developed by using MERN Stack and influenced from Instagram.
 <br><br>
 <a href="https://spreadin.herokuapp.com/">https://spreadin.herokuapp.com/</a>
 <br><br>
@@ -21,6 +21,6 @@ You can create a SpreadIn profile using above link.
 -> Delete Posts <br>
 -> Logout User <br>
 <br>
-Enjoy using SpreadIn and Spread it !!
+Enjoy using Spreadin and Spread it !!
 
 <!-- Comments-->
