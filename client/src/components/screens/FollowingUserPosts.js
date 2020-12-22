@@ -168,7 +168,10 @@ const Home = () => {
                                 {
                                     item.comments.map(record => {
                                         return (
-                                            <h6 key={record._id}><span style={{ fontWeight: "500" }}>{record.postedBy.name}</span> {record.text}
+                                            <h6 key={record._id}><span style={{ fontWeight: "500" }}>
+                                                <Link to={record.postedBy._id !== state._id ? "/profile/" + record.postedBy._id : "/profile"} >{record.postedBy.name}</Link>
+                                                {/* {record.postedBy.name} */}
+                                                </span> {record.text}
                                                 <i className="material-icons" style={{float:"right"}}
                                                     // onClick={ () => { deletePost(item._id)}}
                                                 >more_vert</i>

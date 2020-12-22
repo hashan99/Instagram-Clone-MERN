@@ -36,7 +36,7 @@ const NavBar = ()=>{
       <div className="navbar-fixed">
         <nav>
         <div className="nav-wrapper white" style={{color:"Black"}}>
-          <Link to={state?"/":"/signin"} className="brand-logo left">Instagram</Link>
+          <Link to={state?"/":"/signin"} className="brand-logo left">SpreadIn</Link>
           <ul id="nav-mobile" className="right">
             {renderList()}
           </ul>

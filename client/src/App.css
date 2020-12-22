@@ -5,7 +5,8 @@ a{
 }
 
 .brand-logo,h2{
-    font-family: 'Grand Hotel', cursive;
+    /* font-family: 'Grand Hotel', cursive; */
+    font-family: 'Fredoka One', cursive;
 }
 
 .mycard{
