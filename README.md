@@ -1,5 +1,5 @@
 # Spreadin-WebApp-MERN
-<img src="Spreadin.ico"/>
+<img src="Spreadin.ico" weight="50px" height="50px"/>
 <br>
 Spreadin is a Web-App developed by using MERN Stack and influenced from Instagram.
 <br><br>
