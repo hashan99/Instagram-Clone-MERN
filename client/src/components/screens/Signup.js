@@ -81,13 +81,13 @@ const Signup = () => {
                 ></img>
                 <input
                     type="text"
-                    placeholder="name"
+                    placeholder="username"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                 />
                 <input
                     type="text"
-                    placeholder="email"
+                    placeholder="valid email address"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 />

@@ -6,6 +6,15 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const {JWT_SECRET} = require('../config/keys')
 const requireLogin = require('../middleware/requireLogin')
+const nodemailer = require('nodemailer')
+const sendgridTransport = require('nodemailer-sendgrid-transport')
+//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
+
+const transporter = nodemailer.createTransport(sendgridTransport({
+    auth:{
+        api_key:"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"
+    }
+}))
 
 // router.get('/protected',requireLogin,(req,res)=>{
 //     res.send("Hello User")
@@ -34,6 +43,12 @@ router.post('/signup',(req,res)=>{
     
             user.save()
             .then(user=>{
+                transporter.sendMail({
+                    to:user.email,
+                    from:"no-reply@spreadin.com",
+                    subject:"Signed up Success",
+                    html:"<h1>Welcome to Spreadin</h1>"
+                })
                 res.json({message:"Signed up succesfully"})
             })
             .catch(err=>{
