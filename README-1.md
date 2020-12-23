@@ -3,7 +3,7 @@ Spreadin is a Web-App developed by using MERN Stack and influenced from Instagra
 <br><br>
 <a href="https://spreadin.herokuapp.com/">https://spreadin.herokuapp.com/</a>
 <br><br>
-You can create a SpreadIn profile using above link.
+You can create a Spreadin profile using above link.
 <br><br>
 <b>**Features**</b>
 <br><br>
