@@ -45,9 +45,10 @@ router.post('/signup',(req,res)=>{
             .then(user=>{
                 transporter.sendMail({
                     to:user.email,
-                    from:"no-reply@spreadin.com",
-                    subject:"Signed up Success",
-                    html:"<h1>Welcome to Spreadin</h1>"
+                    from:"admin@spreadin.me",
+                    fromname: 'Spreadin',
+                    subject:"spreadin-signup successfully",
+                    html:"<h1>Hello, Welcome to Spreadin</h1>"
                 })
                 res.json({message:"Signed up succesfully"})
             })
