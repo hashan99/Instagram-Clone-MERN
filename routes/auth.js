@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const mongoose = require('mongoose')
+const crypto = require('crypto')
 const User = mongoose.model("User")
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
@@ -88,6 +89,10 @@ router.post('/signin',(req,res)=>{
             console.log(err)
         })
     })
+})
+
+router.post('reset-password',(req,res)=>{
+    
 })
 
 module.exports = router
