@@ -91,8 +91,34 @@ router.post('/signin',(req,res)=>{
     })
 })
 
-router.post('reset-password',(req,res)=>{
-    
+router.post('/reset-password',(req,res)=>{
+    crypto.randomBytes(21,(err,buffer)=>{
+        if(err){
+            console.log(err)
+        }
+        const token = buffer.toString("hex")
+        User.findOne({email:req.body.email})
+        .then(user=>{
+            if(!user){
+                return res.status(422).json({error:"User don't exists with that email"})
+            }
+            user.resetToken = token
+            user.expireToken = Date.now() + 3600000
+            user.save().then((result)=>{
+                transporter.sendMail({
+                    to:user.email,
+                    from:"admin@spreadin.me",
+                    fromname: 'Spreadin',
+                    subject:"Password Reset",
+                    html:`
+                        <p>you requested for password reset</p>
+                        <h5>click in this <a href="http://localhost:3000/reset/${token}">link</a> to reset password</h5>
+                    `
+                })
+                res.json({message:"check your email"})
+            })
+        })
+    })
 })
 
 module.exports = router
