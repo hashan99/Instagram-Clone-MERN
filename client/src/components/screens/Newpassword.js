@@ -1,22 +1,21 @@
 import React,{useState,useContext} from 'react'
-import {Link,useHistory} from 'react-router-dom'
+import {Link,useHistory,useParams} from 'react-router-dom'
 import M from 'materialize-css'
 
-const Reset = () => {
+const Signin = () => {
     const history = useHistory()
-    const [email,setEmail] = useState("")
+    const [password,setPassword] = useState("")
+    const {token} = useParams()
+    console.log(token)
     const PostData = ()=>{
-        if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
-            M.toast({html: "Invalid email",classes:"#c62828 red darken-3"})
-            return
-        }
-        fetch('/reset-password',{
+        fetch("/new-password",{
             method:"post",
             headers:{
                 "Content-Type":"application/json"
             },
             body:JSON.stringify({
-                email,
+                password,
+                token
             })
         }).then(res=>res.json())
         .then(data=>{
@@ -40,15 +39,15 @@ const Reset = () => {
                     weight="60px" height="60px"
                 ></img>
                 <input 
-                type="text" 
-                placeholder="Enter your email" 
-                value={email}
-                onChange={(e)=>setEmail(e.target.value)}
+                type="password" 
+                placeholder="Enter a new password" 
+                value={password}
+                onChange={(e)=>setPassword(e.target.value)}
                 />
-                <button className="btn waves-effect waves-light #64b5f6 blue darken-1" onClick={()=>PostData()}>reset password</button>
+                <button className="btn waves-effect waves-light #64b5f6 blue darken-1" onClick={()=>PostData()}>Update Password</button>
             </div>
         </div>
     )
 }
 
-export default Reset
+export default Signin
