@@ -1,0 +1,288 @@
+---------------------------------------------------------------------------------------------
+
+					**Spreadin**
+
+---------------------------------------------------------------------------------------------
+
+**want to implemented**
+
+edit comment
+delete comment
+edit post title
+edit post body
+profile img in wall
+I can shuffle all post to explore and following posts to the home
+delete profile
+
+---------------------------------------------------------------------------------------------
+
+npm init    
+code .
+npm install express    
+create file app.js    
+npm install nodemon -g (for restart the server when change the code)    
+node app (run on cmd) / nodemon app    
+localhost:PORT (run on browser)
+configure mongo db
+create file keys.js in config
+npm install mongoose     
+mongoose connection create in app.js
+create models directory and user.js in it.
+edit userSchema in user.js and add it to app.js
+create routes directory and auth.js in it.
+install postman
+edit auth.js
+sign up details sent to the mongo db
+npm install bcryptjs      
+password hashed
+sign in route implemented
+npm install jsonwebtoken      
+add token using jwt to sign in
+create middleware directory and requireLogin.js in it.
+edit auth.js and requireLogin.js by adding middleware
+authentication part done succesfully!!
+
+create file post.js in models
+post model created and added the post.js model in to app.js
+create file post.js in routes
+post route created and added the post.js route in to app.js and added the Post model to the post.js route
+create allpost route to post.js route file
+create mypost route to view myposts only in post.js route file
+
+npm install -g create-react-app      
+create-react-app client      
+cd client   
+npm install react-router-dom    
+code .
+npm start   
+http://localhost:3000
+
+client/src
+clear the pilot code and css and logo header in app.js
+delete the logo.svg file
+clear the all code in app.css
+make a directory called components in src dir
+create a file Navbar.js in components dir
+edit the Navbar.js and export it and import it in to the app.js
+css added to index.html and import it in to a app.js
+navbar.js and app.css edited
+import BrowerRouter and Route to the app.js from react-router-dom
+create a dir called screens in components dir
+create a files called Home.js,Profile.js,Signin.js,Signup.js in screens dir
+add all home,profile,signin,signup route to app.js
+import Link to the Navbar.js from react-router-dom
+rename all the <a> tags to <link> and href to thr to in navbar.js
+Signin,Signup,Profile,Home ui created
+create a file called CreatePost.js in screens dir
+CreatePost route and ui implemented
+
+create post method on signup.js
+add a proxy server to the client/package.json 
+npm install materialize-css@next   (client)   15
+import materialize-css to signup.js 
+add toast messages
+add email validation
+create post method on signin.js
+
+configure the cloudinary db for upload the images
+create post method on createpost.js
+
+start making context api in client app.js
+create a dir called reducer in client src
+create a file called userReduce.js in reducers dir
+context api added
+navbar links changed after and before signin and signout
+
+edit server->post.js and client->home.js for fetching posts and showing that on home page
+logout implemented
+profile page edited to show loged user details
+Node js API for like and unlike Post by editing route and model post.js
+implemented like and unlike post by editing home.js
+Node js API for commenting on Post by editing route and model post.js
+implement commenting post by editing home.js
+delete post implemented
+
+create a file called user.js in server -> routes
+edit user.js and app.js in node API(server)
+see profile pages of other users implemented on server side
+create a file called UserProfile.js in client -> components -> screens
+see profile pages of other users implemented on client side
+
+Node API for follow and unfollow user by editing user route and user model
+install react developer tools chrome extension
+editing userProfile.js for follow and unfollow options
+editing userReducer.js for follow and unfollow options
+implementing follow user in react
+follow and unfollow user implemented
+loged user profile details made dynamic - error occured - fixed halfly
+implemented Node API to list my following posts
+create a file called FollowingUserPosts.js in screens dir
+edit post.js for followingpost router //mysubposts
+copy all in Home.js and paste in FollowingUserPosts.js and edit line 8 //SubscribedUserPosts.js
+edit App.js for myfollowingpost route 
+edit Navbar.js for myfollowingpost route
+edit App.css for correct meterialize icons hover cursur effect
+My Following Posts Implemented in Client side
+
+follow unfollow issue fixed by editing UserProfile.js
+editing auth.js route and user.js model for adding pro pic(pic)
+implemented upload profile img when sign up editing Signup.js
+editing user.js route for /updatepic
+editing profile.js for fetch the network request to db
+update profile img implemented
+update profile error fixed :(
+
+view commenter profile implemented
+navbar changed with icons and deployed
+fixed changes deployed
+
+--After deploy--
+
+Create SendGrid account for email services (100 emails per day forever free plan)
+settings->API keys->create API key->give a name->full access->create
+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
+open cmd in server dir
+install below 2 packages
+npm install nodemailer nodemailer-sendgrid-transport
+edit auth.js file in route to add these packages variables
+Auto send welcome email edited
+edit post.js in route and models for show latest post on top
+show latest post on top implemented
+get a new mail service (Zoho Mail) and config it with cloudflair DNS to add domain
+create a new send user in SendGrid and added it to auth.js from:""
+
+editing auth.js for send a reset password link to email
+editing user.js model for resetToken
+create a Reset.js in screen dir for frontend
+copy all from signin.js and paste to Reset.js
+editing App.js for Reset route
+implemented
+
+create a Newpassword.js file in screen dir
+copy all from signin.js and paste to Reset.js
+editing App.js for NewPassword route
+editing auth.js for create new password
+create new pw and save it in db implemented
+
+
+
+
+
+
+------------------------------------------------------------------------------------------
+
+		----------------------------------------------------
+
+				**Deployment on Heroku** 
+
+		----------------------------------------------------
+https://cra.link/deployment
+https://www.youtube.com/watch?v=kKGSGT7mSnQ   --> add a custom domain to heroku
+
+client cmd -> npm run build (generate build folder)
+process.env.PORT | (app.js in port)
+create prod.js and dev.js files in config dir
+editing package.json in server scripts -> ("start":"node app.js"),("heroku-postbuild":"")
+"main":"index.js" renamed app.js
+delete .git dir in client dir
+moved client dir to inside the server dir
+copy .gitignore file to server dir from mukesh github
+open cmd in server dir
+heroku login
+git init 
+git add .
+heroku git:remote -a spreadin 
+git commit -am "make it better"
+git push heroku master
+
+goto heroku settings -> reveal config vars
+add keys (dev.js) - MONGOURI -> value and JWT_SEC -> random text
+app deployed successfully
+
+Heroku git URL:  https://git.heroku.com/spreadin.git
+Your app can be found at:  https://spreadin.herokuapp.com/
+
+
+
+---------------------------------------------------------------------------------------------
+
+
+		----------------------------------------------------
+
+				**Deployment on Cloud VPS**
+
+		----------------------------------------------------
+
+https://www.digitalocean.com/community/tutorials/how-to-use-pm2-to-setup-a-node-js-production-environment-on-an-ubuntu-vps
+
+
+Create a new virtual machine(azureuser) and install a OS (http://52.139.220.136/)
+make ports online if needed(3000)
+
+use putty for remote access the virtual machine via CLI
+
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo apt-get install -y nodejs
+node --version
+
+npm init
+npm install express
+create file app.js
+npm install nodemon -g (for restart the server when change the code)
+npm install mongoose
+npm install bcryptjs
+npm install jsonwebtoken
+use WinScp to remote login to vps
+copy server folders/files to the vps(replace if necessary-package.json)
+node app (run on cmd) / nodemon app
+npm install -g create-react-app  (need node version 10 or higher)
+create-react-app client
+cd client
+npm install react-router-dom
+copy client folders/files to the vps(replace if necessary-package.json->"proxy": "http://localhost:5000",)
+if permission denied to replace or delete files, delete through CLI and upload a .zip dir and unzup through CLI
+npm start
+
+sudo -s
+screen -ls
+
+get a domain (freenom.com->)
+cloudflare.com -> traffic control and secure ip(https) using custom nameservers from freenum
+fix target url using DNS from cloudflare
+
+sudo apt install nginx
+
+sudo iptables -D PREROUTING -t nat -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 3000
+(3000 port bind to default 8080 port - UNDO CHANGE A TO D)
+
+<!--sudo nano etc/mongodb.conf
+bind_ip = 0.0.0.0 
+port = 27017 
+auth = true-->
+
+domain is fixing to vps ip?
+
+---------------------------------------------------------------------------------------------
+
+**particles**
+
+sudo -s (goto root)
+cd /etc/apache2/sites-available (default routes)
+IN html folder 
+rm index.html
+mkdir name
+chmod -R 777 name
+cd name
+copy files to vps via WinSCP
+cp file1 file2 file3  /var/www/html/foldername
+cp -r folder1 /var/www/html/foldername
+rm -r folder1
+
+
+
+
+
+
+
+
+
