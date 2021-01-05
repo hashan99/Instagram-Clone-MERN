@@ -15,7 +15,14 @@ const NavBar = ()=>{
     const renderList = ()=>{
       if(state){
         return [
-          <li key="1"><i data-target="modal1" className="large material-icons modal-trigger" style={{color:"black"}}>search</i></li>,
+          <li key="1"><i data-target="modal1" className="large material-icons modal-trigger" style={{color:"black"}}>
+            {/* search */}
+            <img class="nav-icon"
+                src="https://res.cloudinary.com/db957qd0z/image/upload/v1609792765/logos/Search_jaeuqj.ico" 
+                weight="25px" height="25px"
+            ></img>
+            </i>
+          </li>,
           <li key="2"><Link to="/profile">
             <img class="nav-icon"
                 src="https://res.cloudinary.com/db957qd0z/image/upload/v1608644600/logos/Profile_vd3snf.ico" 

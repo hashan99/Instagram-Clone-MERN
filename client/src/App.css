@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
 
+body{
+  background-color: rgb(203, 223, 222);
+  /* background-image: url(''); */
+}
+
 a{
     color: black !important;
 }
@@ -86,3 +91,13 @@ a{
   h6,p{
     font-family: 'Sniglet', cursive;
 }
+
+/* #particles-js{
+  width: 100%;
+  height: 100%;
+  background-color: #b61924;
+  background-image: url('');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+} */
